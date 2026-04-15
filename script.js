@@ -1,4 +1,4 @@
-const ACCESS_PIN = "120825";
+const ACCESS_PIN = "12082025";
 let isUnlocked = false;
 
 const relationshipStart = new Date('2025-08-12T00:00:00');
