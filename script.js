@@ -1,3 +1,6 @@
+const ACCESS_PIN = "120825";
+let isUnlocked = false;
+
 const relationshipStart = new Date('2025-08-12T00:00:00');
 
 const daysCount = document.getElementById('daysCount');
@@ -5,6 +8,25 @@ const monthsCount = document.getElementById('monthsCount');
 const hoursCount = document.getElementById('hoursCount');
 const minutesCount = document.getElementById('minutesCount');
 const relationshipSince = document.getElementById('relationshipSince');
+
+const storyModal = document.getElementById('storyModal');
+const openStory = document.getElementById('openStory');
+const playJourney = document.getElementById('playJourney');
+const closeModal = document.getElementById('closeModal');
+const slides = [...document.querySelectorAll('.slide-item')];
+const prevSlide = document.getElementById('prevSlide');
+const nextSlide = document.getElementById('nextSlide');
+const bgMusic = document.getElementById('bgMusic');
+const musicStatus = document.getElementById('musicStatus');
+const journeyVideo = document.getElementById('journeyVideo');
+
+const pinModal = document.getElementById('pinModal');
+const pinInput = document.getElementById('pinInput');
+const pinSubmit = document.getElementById('pinSubmit');
+const pinClose = document.getElementById('pinClose');
+const pinError = document.getElementById('pinError');
+
+let currentSlide = 0;
 
 function formatDate(date) {
   return new Intl.DateTimeFormat('id-ID', {
@@ -58,19 +80,6 @@ function updateLiveDateTime() {
 updateLiveDateTime();
 setInterval(updateLiveDateTime, 1000);
 
-const storyModal = document.getElementById('storyModal');
-const openStory = document.getElementById('openStory');
-const playJourney = document.getElementById('playJourney');
-const closeModal = document.getElementById('closeModal');
-const slides = [...document.querySelectorAll('.slide-item')];
-const prevSlide = document.getElementById('prevSlide');
-const nextSlide = document.getElementById('nextSlide');
-const bgMusic = document.getElementById('bgMusic');
-const musicStatus = document.getElementById('musicStatus');
-const journeyVideo = document.getElementById('journeyVideo');
-
-let currentSlide = 0;
-
 function updateSlideButtons() {
   if (!prevSlide || !nextSlide || !slides.length) return;
 
@@ -90,6 +99,8 @@ function stopJourneyVideo() {
   if (!journeyVideo) return;
   journeyVideo.pause();
   journeyVideo.currentTime = 0;
+  journeyVideo.muted = true;
+  journeyVideo.volume = 0;
 }
 
 function showSlide(index) {
@@ -109,7 +120,26 @@ function showSlide(index) {
   }
 }
 
-function openModalHandler() {
+function openPinModal() {
+  if (!pinModal) return;
+  pinModal.classList.add('show');
+
+  if (pinInput) {
+    pinInput.value = '';
+    setTimeout(() => pinInput.focus(), 100);
+  }
+
+  if (pinError) {
+    pinError.textContent = '';
+  }
+}
+
+function closePinModal() {
+  if (!pinModal) return;
+  pinModal.classList.remove('show');
+}
+
+function openRealModal() {
   if (!storyModal) return;
 
   storyModal.classList.add('show');
@@ -140,6 +170,15 @@ function openModalHandler() {
   }
 }
 
+function openModalHandler() {
+  if (!isUnlocked) {
+    openPinModal();
+    return;
+  }
+
+  openRealModal();
+}
+
 function closeModalHandler() {
   if (!storyModal) return;
 
@@ -156,6 +195,44 @@ function closeModalHandler() {
   if (musicStatus) {
     musicStatus.textContent = '🎵 Soundtrack diputar otomatis';
   }
+}
+
+if (pinSubmit) {
+  pinSubmit.addEventListener('click', () => {
+    if (!pinInput) return;
+
+    if (pinInput.value === ACCESS_PIN) {
+      isUnlocked = true;
+      closePinModal();
+      openRealModal();
+    } else if (pinError) {
+      pinError.textContent = 'PIN salah 😢';
+      pinInput.value = '';
+      pinInput.focus();
+    }
+  });
+}
+
+if (pinInput) {
+  pinInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && pinSubmit) {
+      pinSubmit.click();
+    }
+  });
+}
+
+if (pinClose) {
+  pinClose.addEventListener('click', () => {
+    closePinModal();
+  });
+}
+
+if (pinModal) {
+  pinModal.addEventListener('click', (e) => {
+    if (e.target === pinModal) {
+      closePinModal();
+    }
+  });
 }
 
 if (openStory) {
@@ -197,6 +274,11 @@ if (nextSlide) {
 }
 
 document.addEventListener('keydown', (e) => {
+  if (pinModal && pinModal.classList.contains('show') && e.key === 'Escape') {
+    closePinModal();
+    return;
+  }
+
   if (!storyModal || !storyModal.classList.contains('show')) return;
 
   if (e.key === 'Escape') {
@@ -233,7 +315,6 @@ if (sections.length) {
   sections.forEach((section) => observer.observe(section));
 }
 
-/* hanya 1 audio di section music yang boleh muter */
 const pageAudios = [...document.querySelectorAll('#music audio')];
 
 pageAudios.forEach((audio) => {

@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<div id="pinModal" class="pin-modal">
+  <div class="pin-box">
+    <h3>🔐 Akses Perjalanan Kami</h3>
+    <p>Masukkan PIN </p>
+
+    <input type="password" id="pinInput" placeholder="••••••••">
+
+    <button id="pinSubmit">Masuk</button>
+
+    <!-- 🔥 tombol kembali -->
+    <button id="pinClose" class="pin-close">Kembali</button>
+
+    <p id="pinError" class="pin-error"></p>
+  </div>
+</div>
+
   <div class="glow one"></div>
   <div class="glow two"></div>
 
@@ -16,7 +33,7 @@
         <div class="brand">
           <div class="brand-badge"><img src="logo.png" alt="Logo Yaser dan Echa"></div>
           <div class="brand-copy">
-            <h1>Yaser ❤️ Echa</h1>
+            <h1>YASECA</h1>
             <p>Love story for Yaser & Echa</p>
           </div>
         </div>
@@ -35,7 +52,7 @@
         <div class="container hero-grid">
           <div class="hero-card">
             <div>
-              <div class="eyebrow">💙 Cerita kita</div>
+              <div class="eyebrow">💙 Website kami</div>
               <h2 class="hero-title">Perjalanan yang <span>penuh</span>, cerita yang berkesan.</h2>
               <p class="hero-subtitle">
                 Website dengan nuansa biru tosca, desain profesional ala Yaser,
@@ -63,7 +80,7 @@
               </div>
               <div class="count-box">
                 <div class="value" id="monthsCount">0</div>
-                <div class="label">Bulan</div>
+                <div class="label">Bulan bersama</div>
               </div>
               <div class="count-box">
                 <div class="value" id="hoursCount">0</div>
@@ -74,9 +91,6 @@
                 <div class="label">Menit berharga</div>
               </div>
             </div>
-            <p>
-              Tanggal jadian dan waktu berjalan real-time ditampilkan langsung di home agar setiap detik perjalanan Yaser dan Echa terasa indah dan bahagia.
-            </p>
           </aside>
         </div>
       </section>
@@ -101,7 +115,7 @@
                 <span class="tag">Interactive Story</span>
                 <span class="pill">Popup Slider</span>
               </div>
-              <h3>Play perjalanan kami</h3>
+              <h3>Play cerita kami</h3>
               <p>
                 Klik tombol play untuk membuka pengalaman cerita berisi kisah Yaser dan Echa: Tahun Terakhir, Hati Yang Ingin Terus Bersama, Rumah, Hadiah Pertama Dari Pasangan, dan pesan Nantikan.
               </p>
@@ -223,8 +237,8 @@
                     <source src="shape.mp3" type="audio/mpeg" />
                   </audio>
                 </div>
-                <div class="track-item">
-                  <div class="track-info">
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
                     <h4>Ghea Indrawari - 1000X</h4>
                     <span>File: 1000X</span>
                   </div>
@@ -232,8 +246,8 @@
                     <source src="1000x.mp3" type="audio/mpeg" />
                   </audio>
                 </div>
-                <div class="track-item">
-                  <div class="track-info">
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
                     <h4>Judika - Tenang</h4>
                     <span>File: Tenang</span>
                   </div>
@@ -253,7 +267,7 @@
             <div>
               <h2>Galeri</h2>
               <p>
-                Area ini disiapkan untuk foto-foto favorit kalian. Saat ini masih berupa placeholder elegan agar nanti mudah diganti dengan gambar asli.
+                Area ini disiapkan untuk foto-foto favorit kami.
               </p>
             </div>
           </div>
