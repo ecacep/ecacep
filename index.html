@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoupleHTML - Echa Syahbania</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <div class="app-shell">
+    <header class="topbar container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-badge"><img src="logo.png" alt="Logo Yaser dan Echa"></div>
+          <div class="brand-copy">
+            <h1>Yaser ❤️ Echa</h1>
+            <p>Love story for Yaser & Echa</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#perjalanan">Perjalanan Kami</a>
+          <a href="#music">Music Kami</a>
+          <a href="#galeri">Galeri</a>
+          <a href="#spesial">Spesial</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-card">
+            <div>
+              <div class="eyebrow">💙 Cerita kita</div>
+              <h2 class="hero-title">Perjalanan yang <span>penuh</span>, cerita yang berkesan.</h2>
+              <p class="hero-subtitle">
+                Website dengan nuansa biru tosca, desain profesional ala Yaser,
+                dan memiliki galeri, halaman spesial yang dibuat untuk satu nama:
+                <strong>ECHA SYAHBANIA</strong>.a
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" style="text-align: center;" href="#perjalanan">Lihat Perjalanan</a>
+                <button class="btn btn-secondary" id="openStory">Play Kisah Kami</button>
+              </div>
+            </div>
+            <p class="footer-note">Tanggal jadian bisa diganti langsung di script agar hitungan otomatis berubah.</p>
+          </div>
+
+          <aside class="card stat-card">
+            <div class="stat-top">
+              <h3>Hitung Perjalanan Yaser & Echa</h3>
+              <div class="pill" id="relationshipSince">Sejak 01 Jan 2024</div>
+            </div>
+            <div style="margin-bottom:12px; color: var(--accent); font-weight:700;" id="liveDateTime"></div>
+            <div class="count-grid">
+              <div class="count-box">
+                <div class="value" id="daysCount">0</div>
+                <div class="label">Hari bersama</div>
+              </div>
+              <div class="count-box">
+                <div class="value" id="monthsCount">0</div>
+                <div class="label">Bulan</div>
+              </div>
+              <div class="count-box">
+                <div class="value" id="hoursCount">0</div>
+                <div class="label">Jam terlewati</div>
+              </div>
+              <div class="count-box">
+                <div class="value" id="minutesCount">0</div>
+                <div class="label">Menit berharga</div>
+              </div>
+            </div>
+            <p>
+              Tanggal jadian dan waktu berjalan real-time ditampilkan langsung di home agar setiap detik perjalanan Yaser dan Echa terasa indah dan bahagia.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="perjalanan">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Perjalanan Kami</h2>
+              <p>
+                Di bagian ini ada menu play yang akan membuka popup slide berisi foto, video, teks berjalan, audio, dan soundtrack kenangan kalian.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-grid">
+            <article class="timeline-card">
+              <div class="timeline-thumb">
+                <button class="play-btn" id="playJourney">▶</button>
+              </div>
+              <div class="meta-row">
+                <span class="tag">Interactive Story</span>
+                <span class="pill">Popup Slider</span>
+              </div>
+              <h3>Play perjalanan kami</h3>
+              <p>
+                Klik tombol play untuk membuka pengalaman cerita berisi kisah Yaser dan Echa: Tahun Terakhir, Hati Yang Ingin Terus Bersama, Rumah, Hadiah Pertama Dari Pasangan, dan pesan Nantikan.
+              </p>
+            </article>
+
+            <article class="timeline-card">
+              <div class="meta-row">
+                <span class="tag">Moments Overview</span>
+                <span class="pill">Highlights</span>
+              </div>
+              <h3>Kenangan terbaik kalian</h3>
+              <p>
+                Struktur sudah disiapkan untuk menampilkan momen pertama bertemu, jalan pertama, hadiah spesial, hingga hari-hari sederhana yang bermakna.
+              </p>
+              <div class="track-list">
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Tahun Terakhir</h4>
+                    <span>Terima kasih sudah temani saya selama beberapa bulan ini...</span>
+                  </div>
+                  <button class="mini-btn">Story</button>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Hati Yang Ingin Terus Bersama</h4>
+                    <span>Jujur, rasanya berat dan saya masih nda siap...</span>
+                  </div>
+                  <button class="mini-btn">Story</button>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Rumah</h4>
+                    <span>Saya cuma mau torang jadi tempat pulang...</span>
+                  </div>
+                  <button class="mini-btn">Story</button>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Hadiah Pertama Dari Pasangan</h4>
+                    <span>Saya masih simpan hadiah pertamamu sampai sekarang...</span>
+                  </div>
+                  <button class="mini-btn">Story</button>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Nantikan</h4>
+                    <span>Masih banyak cerita yang akan saya upload di sini...</span>
+                  </div>
+                  <button class="mini-btn">Story</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="music">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Music Kami</h2>
+              <p>
+                Dibagi menjadi dua kategori: music saya dan music pasangan saya. Setiap lagu sekarang sudah dibuat seperti postingan dan bisa diputar langsung di dalam halaman.
+              </p>
+            </div>
+          </div>
+
+          <div class="music-grid">
+            <article class="music-card">
+              <div class="meta-row">
+                <span class="tag">Kategori</span>
+                <span class="pill">Music Yaser</span>
+              </div>
+              <h3>Postingan musik dari Yaser</h3>
+              <div class="track-list">
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
+                    <h4>Avenged Sevenfold - Dear God</h4>
+                    <span>File: deargood</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="deargood.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
+                    <h4>Avenged Sevenfold - Danger Line</h4>
+                    <span>File: dangerline</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="dangerline.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
+                    <h4>Avenged Sevenfold - Dancing Dead</h4>
+                    <span>File: dancingdead</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="dancingdead.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+              </div>
+            </article>
+
+            <article class="music-card">
+              <div class="meta-row">
+                <span class="tag">Kategori</span>
+                <span class="pill">Music Echa Syahbania</span>
+              </div>
+              <h3>Postingan musik dari Echa</h3>
+              <div class="track-list">
+                <div class="track-item" style="display:block;">
+                  <div class="track-info" style="margin-bottom:12px;">
+                    <h4>Backstreet Boys - Shape Of My Heart</h4>
+                    <span>File: shape</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="shape.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Ghea Indrawari - 1000X</h4>
+                    <span>File: 1000X</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="1000x.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <div class="track-item">
+                  <div class="track-info">
+                    <h4>Judika - Tenang</h4>
+                    <span>File: Tenang</span>
+                  </div>
+                  <audio controls style="width:100%;">
+                    <source src="tenang.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeri">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Galeri</h2>
+              <p>
+                Area ini disiapkan untuk foto-foto favorit kalian. Saat ini masih berupa placeholder elegan agar nanti mudah diganti dengan gambar asli.
+              </p>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto4.png" alt="Ini Cerita Kami 1"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto5.png" alt="Ini Cerita Kami 2"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto6.png" alt="Ini Cerita Kami 3"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto7.png" alt="Ini Cerita Kami 4"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto8.png" alt="Ini Cerita Kami 5"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto9.png" alt="Ini Cerita Kami 6"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto10.png" alt="Ini Cerita Kami 7"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto11.png" alt="Ini Cerita Kami 8"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto12.png" alt="Ini Cerita Kami 9"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+            <article class="gallery-card">
+              <div class="gallery-media"><img src="foto13.png" alt="Ini Cerita Kami 10"></div>
+              <h3>Ini Cerita Kami</h3>
+              <div class="running-text"><span>Ini Cerita Kami — Yaser & Echa 💙</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="spesial">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Halaman Spesial</h2>
+              <p>
+                Bunga animasi dari kuncup hingga mekar, lalu pesan spesial di bawahnya untuk Echa Syahbania.
+              </p>
+            </div>
+          </div>
+
+          <div class="special-grid">
+            <article class="special-card">
+              <div class="flower-stage">
+                <div class="flower-wrap">
+                  <div class="bloom">
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>
+                    <div class="petal p6"></div>
+                    <div class="petal p7"></div>
+                    <div class="petal p8"></div>
+                    <div class="center-dot"></div>
+                  </div>
+                  <div class="stem"></div>
+                  <div class="leaf left"></div>
+                  <div class="leaf right"></div>
+                </div>
+              </div>
+              <p class="flower-caption">Bunga ini dibuat sebagai simbol sayang yang tumbuh, kuat, dan mekar indah.</p>
+            </article>
+
+            <article class="special-card">
+              <div class="message-box">
+                <h3>Untuk <span>ECHA SYAHBANIA</span></h3>
+                <p>
+                  Terima kasih karna sudah jadi bagian yang paling indah dari hari yang saya lalui dengan kau, waktu terasa lebih cepat, hati ba rasa nyaman, dan rasa bosan itu nda pernah terasa sekalipun dengan kau, kau sudah jadi rumah ku kedua yang paling nyaman. Semoga setiap perjalanannya kita selalu dipenuhi tawa, sabar, dan sayang yang terus mekar.
+                </p>
+                <p>
+                  Website ini sedikit bentuk kecil dari rasa sayang yang besar yang selalu ingin saya tunjukkan ke kau.
+                </p>
+                <div class="signature">YASER 15 April 2026 — Untuk ECHA SYAHBANIA Tercinta, Tersayang, Tercantik.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Bottom navigation mobile">
+      <ul>
+        <li><a class="active" href="#home">🏠<span>Home</span></a></li>
+        <li><a href="#perjalanan">🎬<span>Journey</span></a></li>
+        <li><a href="#music">🎵<span>Music</span></a></li>
+        <li><a href="#spesial">🌸<span>Spesial</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="modal" id="storyModal">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div>
+          <h3>Popup Slide Perjalanan Kami</h3>
+          <p style="color: var(--muted); margin-top: 4px;">Foto, video, running text, audio, dan soundtrack.</p>
+        </div>
+        <button class="close-btn" id="closeModal">✕</button>
+      </div>
+
+      <div class="slide-stage">
+        <div class="slide-item active">
+          <div class="media"><img src="foto.png" alt="Tahun Terakhir"></div>
+          <h4>Tahun Terakhir</h4>
+          <p>
+            Terima kasih sudah temani saya selama beberapa bulan ini dan nda kerasa kita sedikit lagi punya jalannya masing masing, kau dengan gelar S.KM mu, saya dengan perjuangan untuk memenuhi harapan orang tua, kenapa nanti bakal terasa berbeda? karna kau nda ada di dekat ku saat sy berjuang dan saya nda ada saat kau berjuang, lucu nda? hahahah te di rasa naaahhh.... sampai ketemu di buol sayanggggg.
+          </p>
+          <div class="running-text"><span>Yaser — 15 April 2026</span></div>
+        </div>
+
+        <div class="slide-item">
+          <div class="media"><video id="journeyVideo" controls muted playsinline><source src="video.mp4" type="video/mp4"></video></div>
+          <h4>Hati Yang Ingin Terus Bersama</h4>
+          <p>
+            saya sadar kalau tahun ini jadi tahun terakhirnya torang bisa sama sama kayak begini. Jujur, rasanya berat dan saya masih nda siap kalau nanti suasananya bakal beda. Hatiku bahkan sebenarnya masih mau kita terus sama-sama, lewatkan banyak hal lagi berdua. Tapi saya juga paham kalau keadaan nda selalu berpihak ke kita. Makasih na sayangku sudah mau bertahan sampai di titik ini, meskipun saya tau ini nda mudah buat kau maafkan saya yang terlalu berlebihan maafkan saya yang belum bisa bikin kau bahagia dengan saya.
+          </p>
+          <div class="running-text"><span>Yaser — 15 April 2026</span></div>
+        </div>
+
+        <div class="slide-item">
+          <div class="media"><img src="foto1.png" alt="Rumah"></div>
+          <h4>Rumah</h4>
+          <p>
+            Kalau bicara soal tujuan, saya nda mau basa basi atau kasih janji yang terlalu tinggi. Intinya, saya cuma mau torang jadi tempat pulang buat satu sama lain. Di tahun terakhir torang sama sama ini, saya makin sadar kalau yang saya cari itu bukan cuma status, tapi pasangan yang bisa diajak susah senang sama sama.
+          </p>
+          <div class="running-text"><span>Yaser — 15 April 2026</span></div>
+        </div>
+
+        <div class="slide-item">
+          <div class="media"><img src="foto2.png" alt="Hadiah Pertama Dari Pasangan"></div>
+          <h4>Hadiah Pertama Dari Pasangan</h4>
+          <p>
+            saya masih simpan hadiah pertamamu sampai sekarang dan ini jadi salah satu hadiah yang paling effort full pertama kali saya dapat dari pasangan. Setiap kali saya lihat barang itu ataupun saya pakai, makannya kau tanya kenapa nda saya pakai? karna saya takut pemberianmu habis, saya selalu ingat bemana awal torang mulai dari saya di tempat KKN yang lingkungannya nda senang ke saya, saya cuman bisa lari ke kau, bahkan sebelum sampai ke sini saya sudah angggap kau rumah saat saya KKN.
+          </p>
+          <div class="running-text"><span>Yaser — 15 April 2026</span></div>
+        </div>
+
+        <div class="slide-item">
+          <div class="media"><img src="foto3.png" alt="Nantikan"></div>
+          <h4>Nantikan</h4>
+          <p>
+            Masih banyak Cerita yang akan saya upload di sini jadi Nantikan yahhh sayangggg echa gomuk, gemoy, imut, cantik dan baik 😘😘😘😘😘😘
+          </p>
+          <div class="running-text"><span>Yaser & Echa forever story</span></div>
+        </div>
+      </div>
+
+      <div class="slide-controls">
+        <div class="slide-buttons">
+          <button id="prevSlide">← Sebelumnya</button>
+          <button id="nextSlide">Selanjutnya →</button>
+        </div>
+        <div class="audio-status" id="musicStatus">🎵 Soundtrack diputar otomatis</div>
+      </div>
+
+      <audio id="bgMusic" loop>
+        <source src="sound.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
