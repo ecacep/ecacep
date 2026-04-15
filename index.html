@@ -10,17 +10,36 @@
 
 <div id="pinModal" class="pin-modal">
   <div class="pin-box">
-    <h3>🔐 Akses Perjalanan Kami</h3>
-    <p>Masukkan PIN </p>
+    <div class="pin-badge">🔐</div>
+    <h3>Akses Perjalanan Kami</h3>
+    <p class="pin-subtitle">Pilih metode akses untuk membuka kisah kami.</p>
 
-    <input type="password" id="pinInput" placeholder="••••••••">
+    <div class="access-tabs">
+      <button type="button" id="showPinAccess" class="access-tab active">Masukkan PIN</button>
+      <button type="button" id="showPayAccess" class="access-tab">Berlangganan</button>
+    </div>
 
-    <button id="pinSubmit">Masuk</button>
+    <div id="pinAccessPanel" class="access-panel active">
+      <label class="pin-label" for="pinInput">PIN Akses</label>
+      <input type="password" id="pinInput" placeholder="Masukkan PIN" inputmode="numeric" />
+      <button id="pinSubmit" class="pin-primary-btn">Masuk dengan PIN</button>
+      <p id="pinError" class="pin-error"></p>
+    </div>
 
-    <!-- 🔥 tombol kembali -->
+    <div id="paymentInfo" class="access-panel payment-card">
+      <div class="payment-price">Rp15.000</div>
+      <p class="payment-text">Transfer ke DANA di bawah ini lalu hubungi pemilik untuk mendapatkan PIN akses.</p>
+
+      <div class="dana-box">
+        <span class="dana-label">Nomor DANA</span>
+        <strong id="danaNumber">081242026570</strong>
+      </div>
+
+      <button type="button" id="copyDanaBtn" class="pin-secondary-btn">Salin Nomor DANA</button>
+      <p id="copyDanaText" class="copy-info"></p>
+    </div>
+
     <button id="pinClose" class="pin-close">Kembali</button>
-
-    <p id="pinError" class="pin-error"></p>
   </div>
 </div>
 

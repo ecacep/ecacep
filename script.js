@@ -26,6 +26,14 @@ const pinSubmit = document.getElementById('pinSubmit');
 const pinClose = document.getElementById('pinClose');
 const pinError = document.getElementById('pinError');
 
+const showPinAccess = document.getElementById('showPinAccess');
+const showPayAccess = document.getElementById('showPayAccess');
+const pinAccessPanel = document.getElementById('pinAccessPanel');
+const paymentInfo = document.getElementById('paymentInfo');
+const copyDanaBtn = document.getElementById('copyDanaBtn');
+const copyDanaText = document.getElementById('copyDanaText');
+const danaNumber = document.getElementById('danaNumber');
+
 let currentSlide = 0;
 
 function formatDate(date) {
@@ -80,6 +88,43 @@ function updateLiveDateTime() {
 updateLiveDateTime();
 setInterval(updateLiveDateTime, 1000);
 
+function activatePinAccess() {
+  if (showPinAccess) showPinAccess.classList.add('active');
+  if (showPayAccess) showPayAccess.classList.remove('active');
+  if (pinAccessPanel) pinAccessPanel.classList.add('active');
+  if (paymentInfo) paymentInfo.classList.remove('active');
+}
+
+function activatePayAccess() {
+  if (showPayAccess) showPayAccess.classList.add('active');
+  if (showPinAccess) showPinAccess.classList.remove('active');
+  if (paymentInfo) paymentInfo.classList.add('active');
+  if (pinAccessPanel) pinAccessPanel.classList.remove('active');
+}
+
+if (showPinAccess) {
+  showPinAccess.addEventListener('click', activatePinAccess);
+}
+
+if (showPayAccess) {
+  showPayAccess.addEventListener('click', activatePayAccess);
+}
+
+if (copyDanaBtn && danaNumber) {
+  copyDanaBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(danaNumber.textContent.trim());
+      if (copyDanaText) {
+        copyDanaText.textContent = 'Nomor DANA berhasil disalin.';
+      }
+    } catch (error) {
+      if (copyDanaText) {
+        copyDanaText.textContent = 'Gagal menyalin. Silakan salin manual.';
+      }
+    }
+  });
+}
+
 function updateSlideButtons() {
   if (!prevSlide || !nextSlide || !slides.length) return;
 
@@ -122,7 +167,9 @@ function showSlide(index) {
 
 function openPinModal() {
   if (!pinModal) return;
+
   pinModal.classList.add('show');
+  activatePinAccess();
 
   if (pinInput) {
     pinInput.value = '';
@@ -131,6 +178,10 @@ function openPinModal() {
 
   if (pinError) {
     pinError.textContent = '';
+  }
+
+  if (copyDanaText) {
+    copyDanaText.textContent = '';
   }
 }
 
